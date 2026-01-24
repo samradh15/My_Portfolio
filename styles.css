@@ -66,14 +66,17 @@ html {
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    /* Editorial Ease */
-    will-change: transform, opacity;
+    filter: blur(10px);
+    /* Cinematic Blur Start */
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity, filter;
 }
 
 .reveal-active {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
+    /* Focus */
 }
 
 .display-heading span {
@@ -939,16 +942,7 @@ footer {
     color: var(--text-charcoal);
 }
 
-/* EMERGENCY FIX: Force all sections to be visible */
-.reveal-on-scroll {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
 
-section {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
 
 /* SELECTION HIGHLIGHT (Luxury) */
 ::selection {
