@@ -1,0 +1,676 @@
+{
+    "meta": {
+        "profile": {
+            "name": "Samradh Agarwal",
+            "displayName": "samradh",
+            "location": "Vijayawada, India",
+            "roleLabels": [
+                "AI Product Manager",
+                "Product Engineer"
+            ],
+            "socials": [
+                {
+                    "network": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/samradh-agarwal-b835a5238/",
+                    "label": "Connect on LinkedIn"
+                },
+                {
+                    "network": "GitHub",
+                    "url": "https://github.com/samradh15",
+                    "label": "View Code on GitHub"
+                }
+            ]
+        },
+        "generatedAt": "2026-01-15T23:30:00+05:30",
+        "version": "1.0.2"
+    },
+    "theme": {
+        "style": "premium_minimal",
+        "voice": "confident_product_led",
+        "recommendedColors": {
+            "primary": "oklch(0.25 0.05 260)",
+            "accent": "oklch(0.65 0.22 260)",
+            "background": "oklch(0.12 0.01 260)",
+            "surface": "oklch(0.18 0.02 260)"
+        },
+        "recommendedFonts": [
+            "Inter Tight",
+            "Space Grotesk"
+        ]
+    },
+    "hero": {
+        "recommendedLayout": "centered_split_typographic_heavy",
+        "tailwindClasses": "min-h-screen flex flex-col justify-center items-start px-6 lg:px-24 bg-grid-pattern relative overflow-hidden",
+        "headline": {
+            "short": "AI Product Manager.",
+            "medium": "AI Product Manager — shipping AI products.",
+            "long": "AI Product Manager candidate — I bridge the gap between AI research and real-world business value."
+        },
+        "subheadline": {
+            "short": "Building for users, not just models.",
+            "medium": "Turning complex AI capabilities into simple, scalable products.",
+            "long": "I'm a founder and engineer who builds AI products. I focus on user problems first, then apply AI to solve them at scale."
+        },
+        "ctas": {
+            "primary": {
+                "text": {
+                    "short": "Work",
+                    "medium": "View my work",
+                    "long": "See product case studies"
+                },
+                "link": "#work",
+                "ariaLabel": "Scroll to product projects and case studies",
+                "tailwindClasses": "px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all"
+            },
+            "secondary": {
+                "text": {
+                    "short": "Contact",
+                    "medium": "Contact me",
+                    "long": "Start a conversation"
+                },
+                "link": "#contact",
+                "ariaLabel": "Go to contact form",
+                "tailwindClasses": "px-6 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all"
+            }
+        },
+        "badges": {
+            "vyapgo": "Product: VyapGO",
+            "dasetai": "Product: DasetAI"
+        },
+        "imagePrompt": "Abstract 3D glassmorphism interface floating in dark void, deep indigo and violet minimalist lighting, 8k resolution, raytracing, no text, subtle cybernetic texture",
+        "altText": "Abstract 3D visualization representing organized data structures and neural networks in a dark, premium aesthetic.",
+        "recommendedCrop": "16:9 cinematic center-focus"
+    },
+    "about": {
+        "recommendedLayout": "two_column_text_grid",
+        "tailwindClasses": "py-20 px-6 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-300",
+        "lead": {
+            "short": "I ship AI products.",
+            "medium": "I'm a Product Manager who speaks 'AI Engineer'.",
+            "long": "I don't just manage backlogs; I build systems. I understand the difference between a demo and a product, and I know how to take AI from 'cool tech' to 'business value'."
+        },
+        "supportingBullets": [
+            {
+                "icon": "Bridge",
+                "text": {
+                    "short": "Technical Translation.",
+                    "medium": "I bridge the gap between stakeholders and AI engineers.",
+                    "long": "I can explain 'context window limits' to a CEO and 'business KPIs' to a researcher."
+                }
+            },
+            {
+                "icon": "Ship",
+                "text": {
+                    "short": "Execution Focus.",
+                    "medium": "I value shipping over perfect models.",
+                    "long": "A deployed heuristic beat a perfect model in a notebook every time."
+                }
+            },
+            {
+                "icon": "User",
+                "text": {
+                    "short": "User Experience.",
+                    "medium": "AI should be invisible.",
+                    "long": "The best AI product is one where the user solves their problem without knowing AI was involved."
+                }
+            }
+        ],
+        "bio": {
+            "short": "Founder & AI PM. Built VyapGO & DasetAI.",
+            "medium": "Founder & AI Engineer. I built and shipped VyapGO (Business Ops) and DasetAI (Data Platform).",
+            "long": "I am Samradh. I'm an engineer by training but a product builder by heart. I founded VyapGO and DasetAI, handling everything from user interviews to rewriting the inference pipelines. I want to work as an AI PM because I love the chaos of defining what to build, and the discipline of shipping it."
+        },
+        "mission": {
+            "short": "Make AI useful.",
+            "medium": "To build AI products that actually solve problems.",
+            "long": "To move past the hype and build AI systems that deliver tangible, boring, and beautiful utility to real humans."
+        },
+        "values": [
+            "Utility over Hype",
+            "Shipping is Learning",
+            "Clear Thinking"
+        ]
+    },
+    "metrics": {
+        "recommendedLayout": "flex_row_bento_strip",
+        "tailwindClasses": "flex flex-wrap justify-between gap-8 py-12 border-y border-white/10",
+        "items": [
+            {
+                "value": "2",
+                "label": "AI Products Shipped",
+                "microcopy": "VyapGO & DasetAI"
+            },
+            {
+                "value": "Top 1%",
+                "label": "Engineering Context",
+                "microcopy": "I write code daily"
+            },
+            {
+                "value": "100+",
+                "label": "User Interviews",
+                "microcopy": "Product Discovery"
+            },
+            {
+                "value": "30%",
+                "label": "Efficiency Gain",
+                "microcopy": "Delivered in Pilots"
+            }
+        ]
+    },
+    "products": {
+        "recommendedLayout": "side_by_side_featured_cards",
+        "tailwindClasses": "grid grid-cols-1 md:grid-cols-2 gap-8 my-20",
+        "vyapgo": {
+            "name": "VyapGO",
+            "tag": "AI Product — Business Ops",
+            "oneLiner": {
+                "short": "AI Ops Assistant.",
+                "medium": "AI Business Copilot for SMBs.",
+                "long": "An automated finance and inventory operation system tailored for the Indian retail market."
+            },
+            "description": {
+                "short": "Automating manual entry.",
+                "medium": "Solved the 'Data Entry' problem for shop owners using Vision + Agents.",
+                "long": "Small businesses hate typing. VyapGO uses multimodal AI to read invoices and voice commands to update ledgers."
+            },
+            "pmResponsibilities": [
+                "Discovered the 'Typing Friction' pain point",
+                "Designed the 'Invisible UI' strategy",
+                "Managed the beta rollout"
+            ],
+            "impact": [
+                "Reduced manual work by 30%",
+                "Zero-training onboarding",
+                "FastAPI + Next.js Stack"
+            ],
+            "techStack": [
+                "Next.js",
+                "Python",
+                "Tesseract OCR",
+                "PostgreSQL"
+            ],
+            "cta": {
+                "label": "View Case Study",
+                "link": "https://example.com/vyapgo-case",
+                "ariaLabel": "Read VyapGO product case study"
+            },
+            "logoPrompt": "Minimal geometric logo consisting of interlocking V and G shapes, indigo gradient, vector style, white background",
+            "logoAlt": "VyapGO product logo"
+        },
+        "dasetai": {
+            "name": "DasetAI",
+            "tag": "AI Product — Dev Tools",
+            "oneLiner": {
+                "short": "Synthetic Data Platform.",
+                "medium": "Instant synthetic data for AI development.",
+                "long": "A platform that generates privacy-safe, statistically accurate synthetic datasets for testing."
+            },
+            "description": {
+                "short": "Data on demand.",
+                "medium": "Solved the 'Cold Start' problem for new AI features.",
+                "long": "Developers can't test without data. DasetAI generates 10k rows of complex relational data in seconds from a simple prompt."
+            },
+            "pmResponsibilities": [
+                "Defined the 'Schema-First' UX",
+                "Prioritized export formats (JSON/SQL/CSV)",
+                "Launched on Product Hunt"
+            ],
+            "impact": [
+                "Accelerated dev cycles by 5x",
+                "Used by hackathon teams",
+                "React + FakerJS Stack"
+            ],
+            "techStack": [
+                "FastAPI",
+                "Pandas",
+                "Faker",
+                "React"
+            ],
+            "cta": {
+                "label": "Try Generator",
+                "link": "https://daset.ai",
+                "ariaLabel": "Open DasetAI demo"
+            },
+            "logoPrompt": "Abstract node connection logo, purple and teal dots connected by thin lines, dark mode aesthetic, vector style",
+            "logoAlt": "DasetAI product logo"
+        }
+    },
+    "projects": {
+        "recommendedLayout": "bento_grid_interactive",
+        "tailwindClasses": "grid grid-cols-1 md:grid-cols-2 gap-6",
+        "items": [
+            {
+                "title": "VyapGO",
+                "role": "Product Lead",
+                "description": {
+                    "short": "AI Business Operations.",
+                    "medium": "India's First AI Business Copilot.",
+                    "long": "An AI agent that acts as an accountant for small businesses. It listens, reads, and updates records automatically."
+                },
+                "problem": "Manual data entry is 80% of a shop owner's admin time.",
+                "impact": "Automated 30% of daily ops tasks.",
+                "stack": [
+                    "Next.js",
+                    "Python",
+                    "FastAPI",
+                    "Vision Models"
+                ],
+                "links": {
+                    "demo": "https://vyapgo.com",
+                    "repo": "https://github.com/samradh/vyapgo-core"
+                },
+                "heroImagePrompt": "Dashboard UI showing real-time revenue graphs and AI chat interface, dark mode, high fidelity, 8k render",
+                "heroImageAlt": "VyapGO dashboard interface",
+                "recommendedCrop": "16:10 top-aligned",
+                "tailwindClasses": "col-span-1 md:col-span-1 bg-gradient-to-br from-indigo-900/40 to-black",
+                "bullets": [
+                    "Identified key user friction points",
+                    "Architected the Agentic workflow",
+                    "Shipped to pilot users"
+                ],
+                "caseStudyOutline": {
+                    "overview": "Making AI Invisible for Retail.",
+                    "problem": "Retailers don't want software; they want results.",
+                    "solution": "A voice-first, vision-first agent.",
+                    "architecture": "Multimodal Input -> Intent Classifier -> Action Engine -> Database.",
+                    "keyResults": "High engagement due to zero-learning curve.",
+                    "replication": [
+                        "User shadowing",
+                        "MVP with Wizard of Oz testing",
+                        "Production deployment"
+                    ]
+                }
+            },
+            {
+                "title": "DasetAI",
+                "role": "Product Manager",
+                "description": {
+                    "short": "Synthetic Data Platform.",
+                    "medium": "Solving the 'Empty Database' problem.",
+                    "long": "A tool that lets developers generate massive, realistic datasets for efficient testing and demoing."
+                },
+                "problem": "You can't test a UI or an AI model with an empty database.",
+                "impact": "Generates 10k rows in under 2 minutes.",
+                "stack": [
+                    "React",
+                    "Python",
+                    "Pandas",
+                    "Generative Rules"
+                ],
+                "links": {
+                    "demo": "https://daset.ai",
+                    "repo": "https://github.com/samradh/daset-engine"
+                },
+                "heroImagePrompt": "Split screen showing generation parameters on left and resulting data table on right, clean UI, glassmorphism, 8k",
+                "heroImageAlt": "DasetAI data generation interface",
+                "recommendedCrop": "Square center-focus",
+                "tailwindClasses": "col-span-1 bg-surface border border-white/5 hover:border-accent/40",
+                "bullets": [
+                    "Designed the 'Prompt-to-Data' flow",
+                    "Built for Developer Experience (DX)",
+                    "Scaled generation logic"
+                ],
+                "caseStudyOutline": {
+                    "overview": "Data at the speed of thought.",
+                    "problem": "Staging environments are always broken/empty.",
+                    "solution": "Deterministic, schema-aware data generator.",
+                    "architecture": "Schema Definition -> Generation Workers -> Stream Download.",
+                    "keyResults": "Adopted by student devs for hackathons.",
+                    "replication": [
+                        "Market research on existing tools",
+                        "Feature prioritization",
+                        "Iterative UI polish"
+                    ]
+                }
+            }
+        ]
+    },
+    "caseStudies": [
+        {
+            "id": "vyapgo-deep-dive",
+            "slug": "vyapgo-automation",
+            "title": {
+                "short": "VyapGO",
+                "medium": "VyapGO: Product Case Study",
+                "long": "VyapGO: Building an 'Invisible' AI Product."
+            },
+            "client": "Internal Product Project",
+            "timeline": "6 Months",
+            "intro": {
+                "short": "Product case study for VyapGO.",
+                "medium": "How we discovered and solved the 'Data Entry' pain point.",
+                "long": "We didn't set out to build an 'AI app'. We set out to stop shop owners from typing on tiny screens late at night. AI was just the how."
+            },
+            "sections": [
+                {
+                    "heading": "The Insight",
+                    "content": "Shop owners trust paper because it's fast. Software is slow. We needed software to be faster than paper."
+                },
+                {
+                    "heading": "The AI Unlock",
+                    "content": "Using Vision to read bills and Voice to record sales meant the user never had to type. The AI handled the structure."
+                },
+                {
+                    "heading": "Execution",
+                    "content": "Built a PWA for distribution. Used FastAPI for speed. Iterated on the intent parser weekly based on failed queries."
+                }
+            ],
+            "visualSuggestions": [
+                "User journey map",
+                "Before/After workflow comparison",
+                "Product screenshots and telemetry"
+            ],
+            "stats": [
+                {
+                    "label": "Metric",
+                    "value": "30% Less Time"
+                },
+                {
+                    "label": "UX",
+                    "value": "No Typing"
+                }
+            ]
+        },
+        {
+            "id": "dasetai-deep-dive",
+            "slug": "dasetai-synthetic",
+            "title": {
+                "short": "DasetAI",
+                "medium": "DasetAI: Product Case Study",
+                "long": "DasetAI: Solving the Developer Cold Start."
+            },
+            "client": "Developer Tooling",
+            "timeline": "3 Months",
+            "intro": {
+                "short": "Product case study for DasetAI.",
+                "medium": "Designing a tool for other builders.",
+                "long": "Every time I started a project, I spent 2 days writing seed scripts. I turned that pain into a product."
+            },
+            "sections": [
+                {
+                    "heading": "The Problem",
+                    "content": "You build a beautiful dashboard, but it looks broken because there's no data. Writing 'Lorem Ipsum' 100 times is painful."
+                },
+                {
+                    "heading": "The Solution",
+                    "content": "Define your columns (e.g., 'Name', 'Email', 'Transaction Amount'). Click 'Generate'. Get a CSV."
+                },
+                {
+                    "heading": "Product Market Fit",
+                    "content": "Found immediate traction with hackathon teams who needed to demo 'full' apps to judges."
+                }
+            ],
+            "visualSuggestions": [
+                "Schema builder UI",
+                "Export type comparison",
+                "Generation performance chart"
+            ],
+            "stats": [
+                {
+                    "label": "Speed",
+                    "value": "<2m/10k rows"
+                },
+                {
+                    "label": "Users",
+                    "value": "Builders"
+                }
+            ]
+        }
+    ],
+    "skills": {
+        "recommendedLayout": "grouped_accordion",
+        "groups": [
+            {
+                "title": "AI Product Stack",
+                "items": [
+                    "LLM Prototyping (OpenAI/Anthropic)",
+                    "RAG Architectures",
+                    "Agentic Workflows",
+                    "Prompt Engineering",
+                    "Eval Frameworks"
+                ]
+            },
+            {
+                "title": "Product Strategy",
+                "items": [
+                    "Problem Discovery",
+                    "User Research",
+                    "PRD & Spec Writing",
+                    "Metric Definition",
+                    "Go-to-Market"
+                ]
+            },
+            {
+                "title": "Technical Foundation",
+                "items": [
+                    "Python & SQL",
+                    "Next.js / React",
+                    "FastAPI",
+                    "PostgreSQL",
+                    "Docker / AWS"
+                ]
+            }
+        ]
+    },
+    "experienceSnapshot": [
+        {
+            "role": "Product Lead",
+            "company": "VyapGO",
+            "duration": "2024 — Present",
+            "location": "Vijayawada, India",
+            "description": "Led product from 0 to 1. Defined the 'Invisible AI' strategy."
+        },
+        {
+            "role": "Product Manager",
+            "company": "DasetAI",
+            "duration": "2023 — Present",
+            "location": "Remote",
+            "description": "Built and launched a developer success tool."
+        }
+    ],
+    "education": [
+        {
+            "degree": "B.Tech in Computer Science",
+            "school": "VIT AP University",
+            "duration": "2022 — 2026",
+            "description": "Specialization in AI. Built products instead of just assignments."
+        }
+    ],
+    "services": [
+        {
+            "title": "Product Thinking",
+            "description": {
+                "short": "From idea to roadmap.",
+                "medium": "I turn vague ideas into concrete product plans.",
+                "long": "I help define what to build, why to build it, and how to measure if it worked."
+            },
+            "cta": "Plan",
+            "icon": "Bulb",
+            "benefits": [
+                "Strategy",
+                "Specs",
+                "Roadmap"
+            ]
+        },
+        {
+            "title": "AI Execution",
+            "description": {
+                "short": "From plan to product.",
+                "medium": "I execute with engineering teams to ship.",
+                "long": "I speak the language of engineering to ensure the product vision survives the development process."
+            },
+            "cta": "Build",
+            "icon": "Code",
+            "benefits": [
+                "Delivery",
+                "Quality",
+                "Agility"
+            ]
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "Arjun K.",
+            "role": "Co-founder",
+            "quote": "Samradh thinks in products, not just features. He knows what matters.",
+            "company": "RetailTech",
+            "avatarAlt": "Portrait of Arjun K."
+        },
+        {
+            "name": "Sarah J.",
+            "role": "PM Lead",
+            "quote": "Rare to find an engineer who cares this much about the user journey.",
+            "company": "DataFlow",
+            "avatarAlt": "Portrait of Sarah J."
+        }
+    ],
+    "blogPreview": [
+        {
+            "title": "AI is a UX Problem",
+            "excerpt": "Why the best AI products don't look like AI.",
+            "date": "Oct 12, 2024",
+            "readTime": "5 min read",
+            "link": "https://example.com/blog/ai-ux"
+        },
+        {
+            "title": "Buying vs Building",
+            "excerpt": "When to wrap an API and when to train a model.",
+            "date": "Sep 08, 2024",
+            "readTime": "4 min read",
+            "link": "https://example.com/blog/buy-vs-build"
+        }
+    ],
+    "contact": {
+        "recommendedLayout": "slited_form_and_socials",
+        "tailwindClasses": "max-w-2xl mx-auto py-20 text-center",
+        "email": "samradh1515@gmail.com",
+        "phone": "+91 98765 43210",
+        "microcopy": {
+            "subjectLine": "Job Inquiry: AI PM — [Your Name]",
+            "messagePlaceholder": "Hey Samradh, we're looking for someone to lead our AI product...",
+            "privacyNote": "I reply to every relevant message."
+        },
+        "ctaVariants": {
+            "apply": "Reach Out",
+            "collaborate": "Let's Chat",
+            "download": "Download CV",
+            "talk": "Let's Talk"
+        },
+        "socials": [
+            {
+                "network": "LinkedIn",
+                "url": "https://linkedin.com/in/samradh",
+                "label": "Connect",
+                "ariaLabel": "Visit LinkedIn"
+            },
+            {
+                "network": "GitHub",
+                "url": "https://github.com/samradh",
+                "label": "Code",
+                "ariaLabel": "Visit GitHub"
+            }
+        ]
+    },
+    "footer": {
+        "recommendedLayout": "minimal_stacked_links",
+        "tailwindClasses": "border-t border-white/10 mt-20 py-12 flex flex-col items-center gap-6",
+        "copyright": "© 2026 Samradh Agarwal. Shipping AI Products.",
+        "links": [
+            {
+                "text": "Home",
+                "url": "/"
+            },
+            {
+                "text": "Work",
+                "url": "#work"
+            },
+            {
+                "text": "About",
+                "url": "#about"
+            }
+        ],
+        "legal": [
+            {
+                "text": "Privacy",
+                "url": "/privacy"
+            }
+        ],
+        "microSitemap": "Main / Work / About"
+    },
+    "accessibility": {
+        "notes": "Ensure 4.5:1 contrast.",
+        "focusRing": "focus:outline-none focus:ring-2 focus:ring-primary",
+        "skipLink": "Skip to content",
+        "minimumContrastRatio": "4.5:1",
+        "ariaRecommendations": {
+            "primaryCTAs": "Aria labels for all buttons",
+            "projectCards": "Aria labelledby card title",
+            "modals": "Dialog role"
+        }
+    },
+    "seo": {
+        "title": "Samradh Agarwal | AI Product Manager Strategy",
+        "h1": "AI Product Manager — Shipping Real Value",
+        "metaDescription": {
+            "short": "Samradh Agarwal — AI Product Manager. I bridge the gap between AI tech and user value.",
+            "medium": "Portfolio of Samradh Agarwal, an AI Product Manager and builder. VyapGO and DasetAI.",
+            "long": "Samradh Agarwal is an AI Product Manager who builds products like VyapGO and DasetAI. He combines technical engineering skills with product strategy to ship AI that works."
+        },
+        "keywords": [
+            "AI Product Manager",
+            "AI PM",
+            "Product Management",
+            "VyapGO",
+            "DasetAI"
+        ],
+        "canonical": "https://samradh.com",
+        "ogImagePrompt": "Clean typography 'Samradh: AI PM' on dark background",
+        "twitterCardCopy": "I build AI products that matter."
+    },
+    "imagePrompts": {
+        "hero": "Dark, minimal, network nodes, glass.",
+        "projectThumbnails": "Glass icon, dark background.",
+        "ogImage": "Typography centered."
+    },
+    "copyVariants": {
+        "viewWork": [
+            "View Work",
+            "See Products"
+        ],
+        "contact": [
+            "Contact",
+            "Say Hello"
+        ],
+        "resume": [
+            "Resume",
+            "CV"
+        ]
+    },
+    "uiMicrocopy": {
+        "buttons": {
+            "submit": "Send",
+            "loading": "sending...",
+            "success": "sent",
+            "error": "error"
+        },
+        "formLabels": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "role": "Role"
+        },
+        "error404": "404",
+        "emptyState": "Empty",
+        "loading": "Loading"
+    },
+    "outputExtras": {
+        "exportFormats": {
+            "json": "Content Object"
+        },
+        "priorityContent": [
+            "hero.headline",
+            "metrics",
+            "projects"
+        ]
+    }
+}
