@@ -233,6 +233,42 @@
             },
             "logoPrompt": "Abstract node connection logo, purple and teal dots connected by thin lines, dark mode aesthetic, vector style",
             "logoAlt": "DasetAI product logo"
+        },
+        "vacuumos": {
+            "name": "Vacuum OS",
+            "tag": "Product Exploration — Productivity",
+            "oneLiner": {
+                "short": "Deep Work Workspace.",
+                "medium": "A minimal workspace designed for deep work.",
+                "long": "A digital workspace designed for deep, uninterrupted work, optimizing for clarity and outcomes per session."
+            },
+            "description": {
+                "short": "Focus by design.",
+                "medium": "Optimizing for clarity and outcomes, not engagement.",
+                "long": "Most productivity tools optimize for feature density. Vacuum OS optimizes for focus, converting goals into execution roadmaps."
+            },
+            "pmResponsibilities": [
+                "Designed for 'Behavior Change'",
+                "Implemented 'Neural Strategy' flow",
+                "Built 'Deep Focus Engine'"
+            ],
+            "impact": [
+                "Time to first action < 90s",
+                "Avg focus session: 45m",
+                "Zero-distraction UI"
+            ],
+            "techStack": [
+                "React",
+                "Minimal UI",
+                "Local State"
+            ],
+            "cta": {
+                "label": "View Repo",
+                "link": "https://github.com/samradh15/Vacuum-OS",
+                "ariaLabel": "View Vacuum OS Repository"
+            },
+            "logoPrompt": "Minimalist black and white concentric circles, zen aesthetic, high contrast",
+            "logoAlt": "Vacuum OS logo"
         }
     },
     "projects": {
@@ -320,6 +356,47 @@
                         "Market research on existing tools",
                         "Feature prioritization",
                         "Iterative UI polish"
+                    ]
+                }
+            },
+            {
+                "title": "Vacuum OS",
+                "role": "Product Engineer",
+                "description": {
+                    "short": "Deep Work UI.",
+                    "medium": "A minimal workspace for deep work.",
+                    "long": "A digital workspace designed for deep, uninterrupted work, optimizing for clarity and outcomes per session."
+                },
+                "problem": "Productivity tools optimize for feature density, not focus.",
+                "impact": "Time to first action < 90s.",
+                "stack": [
+                    "React",
+                    "Minimal UI",
+                    "Local State"
+                ],
+                "links": {
+                    "demo": "#",
+                    "repo": "https://github.com/samradh15/Vacuum-OS"
+                },
+                "heroImagePrompt": "Minimalist black and white interface, distraction-free text editor, zen mode, high contrast",
+                "heroImageAlt": "Vacuum OS interface",
+                "recommendedCrop": "16:10 top-aligned",
+                "tailwindClasses": "col-span-1 md:col-span-1 bg-black border border-white/20",
+                "bullets": [
+                    "Designed for 'Behavior Change'",
+                    "Implemented 'Neural Strategy' flow",
+                    "Built 'Deep Focus Engine'"
+                ],
+                "caseStudyOutline": {
+                    "overview": "Designing for focus.",
+                    "problem": "Distraction is the default state of modern OS.",
+                    "solution": "A single-screen, single-task workspace.",
+                    "architecture": "Local Storage -> State Machine -> Minimal Render.",
+                    "keyResults": "Avg focus session increased to 45m.",
+                    "replication": [
+                        "Remove all notification logic",
+                        "Enforce single-task constraint",
+                        "Black & White only constraint"
                     ]
                 }
             }
