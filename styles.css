@@ -690,10 +690,30 @@ footer {
     opacity: 0.6;
 }
 
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Replaces margin-left on individual links */
+}
+
 .social-links a {
     color: inherit;
-    margin-left: 2rem;
     text-decoration: none;
+    display: flex;
+    /* Centers the SVG */
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-organic);
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 /* PREVIEW WINDOW (Hidden by default, shown by JS) */
