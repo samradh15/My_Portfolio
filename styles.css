@@ -969,3 +969,16 @@ footer {
     background: var(--accent-organic);
     color: white;
 }
+/* Utility: Under Construction Tag */
+.construction-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent-organic);
+    border: 1px solid var(--accent-organic);
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    display: inline-block;
+    text-transform: uppercase;
+}

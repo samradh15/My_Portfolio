@@ -319,19 +319,18 @@
             },
             {
                 "title": "DasetAI",
-                "role": "Product Manager",
+                "role": "Founding Engineer",
                 "description": {
                     "short": "Synthetic Data Platform.",
                     "medium": "Solving the 'Empty Database' problem.",
-                    "long": "A tool that lets developers generate massive, realistic datasets for efficient testing and demoing."
+                    "long": "A tool that lets developers generate massive, realistic datasets for efficient testing and demoing. (Under Construction)"
                 },
                 "problem": "You can't test a UI or an AI model with an empty database.",
-                "impact": "Generates 10k rows in under 2 minutes.",
+                "impact": "68% Better Data.",
                 "stack": [
-                    "React",
                     "Python",
-                    "Pandas",
-                    "Generative Rules"
+                    "RAG",
+                    "React"
                 ],
                 "links": {
                     "demo": "https://daset.ai",
@@ -342,9 +341,9 @@
                 "recommendedCrop": "Square center-focus",
                 "tailwindClasses": "col-span-1 bg-surface border border-white/5 hover:border-accent/40",
                 "bullets": [
-                    "Designed the 'Prompt-to-Data' flow",
-                    "Built for Developer Experience (DX)",
-                    "Scaled generation logic"
+                    "Designed 'Dataset Studio' pipeline (Ingest → Clean → Validate), reducing ingestion errors by 40%.",
+                    "Built 'Antigravity' IDE workflow for friction-free data mining.",
+                    "Implemented schema validation, cutting bad records by 68%."
                 ],
                 "caseStudyOutline": {
                     "overview": "Data at the speed of thought.",
