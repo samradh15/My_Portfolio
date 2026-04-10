@@ -501,6 +501,84 @@ h4 {
     color: var(--accent-organic);
 }
 
+/* Experience Timeline */
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--line-hairline);
+    transition: border-color 0.4s ease;
+    align-items: flex-start;
+}
+
+.timeline-item:hover {
+    border-left-color: var(--accent-organic);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.timeline-company {
+    font-size: 1.5rem;
+    color: var(--text-ink);
+    margin: 0;
+}
+
+.timeline-role {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-charcoal);
+    font-weight: 500;
+}
+
+.timeline-role::before {
+    content: '—';
+    margin-right: 1rem;
+    color: var(--text-muted);
+}
+
+.timeline-date {
+    margin-left: auto;
+    color: var(--accent-organic);
+}
+
+.timeline-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-charcoal);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.timeline-bullets li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+}
+
 /* Philosophy Grid */
 .method-grid {
     display: grid;
