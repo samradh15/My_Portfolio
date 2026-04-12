@@ -103,33 +103,172 @@ function initClock() {
  * Highlights the sidebar nav based on scroll position
  */
 function initScrollSpy() {
-    const sections = ['work', 'philosophy', 'resume', 'contact'];
-    const navLinks = {
-        'work': document.getElementById('nav-work'),
-        'philosophy': document.getElementById('nav-philosophy'),
-        'resume': document.getElementById('nav-resume'),
-        'contact': document.getElementById('nav-contact')
+    const navContainer = document.querySelector('.editorial-nav');
+    const navLinks = Array.from(document.querySelectorAll('.editorial-nav .nav-link'));
+    const navTargets = navLinks
+        .map(link => {
+            const href = link.getAttribute('href') || '';
+            const id = href.startsWith('#') ? href.slice(1) : '';
+            const section = id ? document.getElementById(id) : null;
+            return section ? { id, link, section } : null;
+        })
+        .filter(Boolean);
+
+    if (!navTargets.length) return;
+
+    const wheelEnabled = Boolean(navContainer && navTargets.length > 4);
+    if (wheelEnabled) {
+        navContainer.classList.add('nav-wheel');
+    }
+
+    let activeId = null;
+    let wheelHovered = false;
+    let wheelTargetIndex = 0;
+    let wheelVisualIndex = 0;
+    let wheelAnimationFrame = null;
+    let suppressMouseLeaveSyncUntil = 0;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const indexForId = (id) => navTargets.findIndex(target => target.id === id);
+
+    const renderWheelState = (centerIndex) => {
+        if (!wheelEnabled) return;
+
+        navTargets.forEach((target, index) => {
+            const delta = index - centerIndex;
+            const distance = Math.abs(delta);
+            const translateY = delta * 48;
+            const rotateX = delta * -8;
+            const scale = Math.max(0.8, 1 - (distance * 0.1));
+            const opacity = distance > 3 ? 0 : Math.max(0.14, 1 - (distance * 0.22));
+
+            target.link.style.transform = `translateY(calc(-50% + ${translateY}px)) rotateX(${rotateX}deg) scale(${scale})`;
+            target.link.style.opacity = `${opacity}`;
+            target.link.style.zIndex = `${100 - Math.round(distance * 10)}`;
+            target.link.style.pointerEvents = distance > 2.35 ? 'none' : 'auto';
+        });
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Remove active from all
-                Object.values(navLinks).forEach(link => {
-                    if (link) link.classList.remove('active');
-                });
-                // Add to current
-                if (navLinks[entry.target.id]) {
-                    navLinks[entry.target.id].classList.add('active');
-                }
+    const animateWheel = () => {
+        const diff = wheelTargetIndex - wheelVisualIndex;
+        if (Math.abs(diff) < 0.001) {
+            wheelVisualIndex = wheelTargetIndex;
+            renderWheelState(wheelVisualIndex);
+            wheelAnimationFrame = null;
+            return;
+        }
+
+        wheelVisualIndex += diff * 0.2;
+        renderWheelState(wheelVisualIndex);
+        wheelAnimationFrame = requestAnimationFrame(animateWheel);
+    };
+
+    const startWheelAnimation = () => {
+        if (!wheelEnabled) return;
+        if (wheelAnimationFrame !== null) return;
+        wheelAnimationFrame = requestAnimationFrame(animateWheel);
+    };
+
+    const setActive = (id, options = {}) => {
+        if (!id) return;
+        const { syncWheel = true, immediateWheel = false } = options;
+        const activeIndex = indexForId(id);
+
+        if (wheelEnabled && activeIndex >= 0 && syncWheel) {
+            wheelTargetIndex = activeIndex;
+            if (immediateWheel) {
+                wheelVisualIndex = activeIndex;
+                renderWheelState(wheelVisualIndex);
+            } else {
+                startWheelAnimation();
+            }
+        }
+
+        if (id === activeId) return;
+
+        activeId = id;
+
+        navTargets.forEach(target => {
+            target.link.classList.toggle('active', target.id === id);
+        });
+    };
+
+    const computeActiveSection = () => {
+        const marker = window.scrollY + (window.innerHeight * 0.35);
+        let currentId = navTargets[0].id;
+
+        navTargets.forEach(target => {
+            if (target.section.offsetTop <= marker) {
+                currentId = target.id;
             }
         });
-    }, { threshold: 0.3 }); // Trigger when 30% visible
 
-    sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) observer.observe(el);
+        const nearPageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+        if (nearPageBottom) {
+            currentId = navTargets[navTargets.length - 1].id;
+        }
+
+        setActive(currentId);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            computeActiveSection();
+            ticking = false;
+        });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', computeActiveSection);
+
+    if (wheelEnabled && navContainer) {
+        renderWheelState(wheelVisualIndex);
+
+        navContainer.addEventListener('mouseenter', () => {
+            wheelHovered = true;
+        });
+
+        navContainer.addEventListener('mouseleave', () => {
+            wheelHovered = false;
+            if (performance.now() < suppressMouseLeaveSyncUntil) return;
+            computeActiveSection();
+        });
+
+        navContainer.addEventListener('wheel', (event) => {
+            if (!wheelHovered) return;
+
+            event.preventDefault();
+
+            const delta = event.deltaMode === 1 ? event.deltaY * 16 : event.deltaY;
+            wheelTargetIndex = clamp(
+                wheelTargetIndex + (delta / 220),
+                0,
+                navTargets.length - 1
+            );
+
+            const focusedIndex = clamp(
+                Math.round(wheelTargetIndex),
+                0,
+                navTargets.length - 1
+            );
+
+            setActive(navTargets[focusedIndex].id, { syncWheel: false });
+            startWheelAnimation();
+        }, { passive: false });
+    }
+
+    navTargets.forEach(target => {
+        target.link.addEventListener('click', () => {
+            suppressMouseLeaveSyncUntil = performance.now() + 450;
+            setActive(target.id);
+        });
     });
+
+    computeActiveSection();
 }
 
 /**

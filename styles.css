@@ -286,6 +286,44 @@ h4 {
     gap: 1.5rem;
 }
 
+.editorial-nav.nav-wheel {
+    --wheel-step: 52px;
+    height: 212px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    gap: 0;
+    perspective: 1000px;
+    -webkit-mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.22) 10%,
+            rgba(0, 0, 0, 1) 28%,
+            rgba(0, 0, 0, 1) 72%,
+            rgba(0, 0, 0, 0.22) 90%,
+            transparent 100%);
+    mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.22) 10%,
+            rgba(0, 0, 0, 1) 28%,
+            rgba(0, 0, 0, 1) 72%,
+            rgba(0, 0, 0, 0.22) 90%,
+            transparent 100%);
+}
+
+.editorial-nav.nav-wheel .nav-link {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform-origin: center center;
+    will-change: transform, opacity;
+    transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.34s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
 .nav-link {
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
