@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VyapGO Case Study | Samradh Agarwal</title>
+    <meta name="description"
+        content="Detailed VyapGO case study: voice-first business and compliance copilot for India's MSMEs.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem("theme");
+                if (savedTheme) {
+                    document.documentElement.setAttribute("data-theme", savedTheme);
+                }
+            } catch (error) {
+                // Ignore storage access issues in restrictive browser modes.
+            }
+        })();
+    </script>
+
+    <style>
+        :root {
+            --bg: #F2F0ED;
+            --surface: #FFFFFF;
+            --text: #111111;
+            --text-soft: #333333;
+            --muted: #737373;
+            --accent: #D96C4E;
+            --border: rgba(0, 0, 0, 0.08);
+
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.5rem;
+            --space-6: 2rem;
+            --space-7: 3rem;
+            --space-8: 4rem;
+            --space-9: 5.5rem;
+
+            --max-content: 860px;
+            --top-nav-height: 72px;
+            --line: 1px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0E0E0E;
+            --surface: #1C1C1C;
+            --text: #E0E0E0;
+            --text-soft: #A0A0A0;
+            --muted: #666666;
+            --accent: #E08D79;
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--bg);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .mono-label {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .progress-shell {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        #scroll-progress {
+            width: 0;
+            height: 100%;
+            background: var(--accent);
+            transition: width 0.08s linear;
+        }
+
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            height: var(--top-nav-height);
+            background: var(--bg);
+            border-bottom: var(--line) solid var(--border);
+        }
+
+        .top-nav-inner {
+            max-width: 1220px;
+            margin: 0 auto;
+            height: 100%;
+            padding: 0 var(--space-6);
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            gap: var(--space-5);
+        }
+
+        .home-logo {
+            justify-self: start;
+            font-family: "Fraunces", serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1;
+            color: var(--text);
+            border-bottom: var(--line) solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+            width: fit-content;
+        }
+
+        .home-logo:hover,
+        .home-logo:focus-visible {
+            color: var(--text);
+            border-bottom-color: var(--accent);
+            outline: none;
+        }
+
+        .project-name {
+            font-family: "Fraunces", serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            letter-spacing: 0.01em;
+            color: var(--text);
+        }
+
+        .nav-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            justify-self: end;
+        }
+
+        .theme-btn-compact {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 0.2rem 0.5rem;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .theme-btn-compact:hover,
+        .theme-btn-compact:focus-visible {
+            border-color: var(--text);
+            color: var(--text);
+            outline: none;
+        }
+
+        .page {
+            max-width: var(--max-content);
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-6) var(--space-9);
+        }
+
+        .hero {
+            padding-top: var(--space-6);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Fraunces", serif;
+            color: var(--text);
+            font-weight: 400;
+            font-variation-settings: "SOFT" 50, "WONK" 0;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.6rem);
+            line-height: 1;
+            margin-bottom: var(--space-3);
+        }
+
+        .subtitle {
+            font-size: clamp(1.15rem, 2.6vw, 1.55rem);
+            max-width: 760px;
+            color: var(--text-soft);
+            line-height: 1.45;
+            margin-bottom: var(--space-6);
+        }
+
+        .meta-row {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            border: var(--line) solid var(--border);
+            margin-bottom: var(--space-6);
+        }
+
+        .meta-item {
+            border-right: var(--line) solid var(--border);
+            padding: var(--space-4);
+            min-height: 76px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.3rem;
+        }
+
+        .meta-item:last-child {
+            border-right: 0;
+        }
+
+        .meta-value {
+            font-size: 0.96rem;
+            color: var(--text);
+        }
+
+        .hero-line {
+            max-width: 760px;
+            font-size: 1.12rem;
+            color: var(--text-soft);
+        }
+
+        .section {
+            margin-top: var(--space-8);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            gap: var(--space-5);
+            margin-bottom: var(--space-6);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.9rem);
+            line-height: 1.05;
+        }
+
+        .h-line {
+            flex: 1;
+            border-top: var(--line) solid var(--border);
+            margin-bottom: 0.55rem;
+        }
+
+        .section-copy {
+            font-size: 1.04rem;
+            color: var(--text-soft);
+            margin-bottom: var(--space-6);
+        }
+
+        .stats-block {
+            display: grid;
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+        }
+
+        .stat-item {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            border: var(--line) solid var(--border);
+            background: var(--surface);
+        }
+
+        .stat-value,
+        .stat-text {
+            padding: var(--space-4);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .stat-value {
+            color: var(--accent);
+            border-right: var(--line) solid var(--border);
+            font-size: 1.35rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .stat-text {
+            color: var(--text);
+        }
+
+        .clean-list {
+            list-style: none;
+            display: grid;
+            gap: var(--space-3);
+            color: var(--text);
+        }
+
+        .clean-list li {
+            padding-left: 0;
+            font-size: 1rem;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            border: var(--line) solid var(--border);
+            margin-top: var(--space-5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+            background: var(--surface);
+        }
+
+        th,
+        td {
+            border-right: var(--line) solid var(--border);
+            border-bottom: var(--line) solid var(--border);
+            padding: var(--space-4);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th:last-child,
+        td:last-child {
+            border-right: 0;
+        }
+
+        thead th {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        tbody td {
+            font-size: 0.97rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .index-num {
+            color: var(--accent);
+            font-family: "JetBrains Mono", monospace;
+            width: 54px;
+        }
+
+        .product-block {
+            margin-top: var(--space-7);
+            padding-top: var(--space-6);
+            border-top: var(--line) solid var(--border);
+        }
+
+        .product-label {
+            color: var(--accent);
+            margin-bottom: var(--space-3);
+            display: block;
+        }
+
+        .product-title {
+            font-size: clamp(1.55rem, 3.3vw, 2.25rem);
+            margin-bottom: var(--space-5);
+            line-height: 1.2;
+        }
+
+        .subheading {
+            font-family: "JetBrains Mono", monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            font-size: 0.78rem;
+            margin: var(--space-5) 0 var(--space-3);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-3);
+            margin-top: var(--space-3);
+        }
+
+        .feature-tile {
+            border: var(--line) solid var(--border);
+            background: var(--surface);
+            padding: var(--space-4);
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .feature-title {
+            color: var(--accent);
+        }
+
+        .feature-tile p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-soft);
+        }
+
+        .key-outcome {
+            margin-top: var(--space-5);
+            border-left: var(--line) solid var(--accent);
+            padding-left: var(--space-4);
+            font-size: 1.08rem;
+            color: var(--text);
+        }
+
+        .target-user {
+            margin-top: var(--space-4);
+            color: var(--text-soft);
+        }
+
+        .target-user span {
+            margin-right: 0.55rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: var(--space-6);
+            border-left: var(--line) solid var(--border);
+            display: grid;
+            gap: var(--space-6);
+        }
+
+        .timeline-block h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .timeline-list {
+            list-style: none;
+            display: grid;
+            gap: var(--space-3);
+        }
+
+        .timeline-list li {
+            font-size: 0.99rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+        }
+
+        .metric-box {
+            border: var(--line) solid var(--border);
+            background: var(--surface);
+            padding: var(--space-5) var(--space-4);
+            min-height: 152px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--accent);
+            font-size: clamp(1.7rem, 3.8vw, 2.5rem);
+            line-height: 1.15;
+            margin-bottom: var(--space-2);
+        }
+
+        .metric-label {
+            font-family: "Inter", sans-serif;
+            color: var(--text-soft);
+            font-size: 0.96rem;
+        }
+
+        .learning-list {
+            border-top: var(--line) solid var(--border);
+        }
+
+        .learning-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: var(--space-5);
+            padding: var(--space-4) 0;
+            border-bottom: var(--line) solid var(--border);
+        }
+
+        .learning-item h3 {
+            font-size: 1.12rem;
+            margin-bottom: 0.35rem;
+            font-weight: 500;
+        }
+
+        .learning-item p {
+            color: var(--text-soft);
+            font-size: 0.98rem;
+        }
+
+        .page-footer {
+            margin-top: var(--space-9);
+            padding-top: var(--space-6);
+            border-top: var(--line) solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .footer-back {
+            width: fit-content;
+            border-bottom: var(--line) solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .footer-back:hover,
+        .footer-back:focus-visible {
+            border-bottom-color: var(--accent);
+            outline: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+            will-change: opacity, transform;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 980px) {
+            .top-nav-inner {
+                grid-template-columns: 1fr;
+                justify-items: start;
+                align-content: center;
+                gap: 0.3rem;
+                padding-top: 0.6rem;
+                padding-bottom: 0.6rem;
+                height: auto;
+            }
+
+            .top-nav {
+                height: auto;
+            }
+
+            .project-name {
+                font-size: 1.1rem;
+            }
+
+            .nav-meta {
+                justify-self: start;
+            }
+
+            .page {
+                padding-top: var(--space-7);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                padding-left: var(--space-4);
+                padding-right: var(--space-4);
+                padding-bottom: var(--space-8);
+            }
+
+            .top-nav-inner {
+                padding-left: var(--space-4);
+                padding-right: var(--space-4);
+            }
+
+            .meta-row {
+                grid-template-columns: 1fr;
+            }
+
+            .meta-item {
+                border-right: 0;
+                border-bottom: var(--line) solid var(--border);
+            }
+
+            .meta-item:last-child {
+                border-bottom: 0;
+            }
+
+            .section-header {
+                gap: var(--space-3);
+                align-items: center;
+            }
+
+            .section-header .h-line {
+                margin-bottom: 0;
+            }
+
+            .stat-item {
+                grid-template-columns: 110px 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .learning-item {
+                grid-template-columns: 1fr;
+                gap: var(--space-2);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: var(--space-4);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-shell" aria-hidden="true">
+        <div id="scroll-progress"></div>
+    </div>
+
+    <header class="top-nav">
+        <div class="top-nav-inner">
+            <a class="home-logo" href="index.html" aria-label="Go to Samradh home">Samradh.</a>
+            <div class="project-name">VyapGO</div>
+            <div class="nav-meta">
+                <span class="mono-label">CASE STUDY</span>
+                <button id="theme-toggle" class="theme-btn-compact" aria-label="Toggle theme">
+                    <span id="theme-status">Light</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="hero reveal">
+            <h1>VyapGO</h1>
+            <p class="subtitle">Business &amp; Compliance Copilot for India's 63 Million MSMEs</p>
+
+            <div class="meta-row">
+                <div class="meta-item">
+                    <span class="mono-label">Role</span>
+                    <span class="meta-value">Founding Product Manager</span>
+                </div>
+                <div class="meta-item">
+                    <span class="mono-label">Timeline</span>
+                    <span class="meta-value">May 2025 &mdash; Jan 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="mono-label">Status</span>
+                    <span class="meta-value">LIVE</span>
+                </div>
+                <div class="meta-item">
+                    <span class="mono-label">Domain</span>
+                    <span class="meta-value">AI / Vernacular / MSME</span>
+                </div>
+            </div>
+
+            <p class="hero-line">"MSMEs run India's economy. They shouldn't need a computer science degree to run their business."</p>
+        </section>
+
+        <section class="section reveal" id="problem">
+            <header class="section-header">
+                <h2>The Problem</h2>
+                <span class="h-line"></span>
+                <span class="mono-label">01 / 2026</span>
+            </header>
+
+            <p class="section-copy">
+                India has 63 million MSMEs. Most owners are first-generation entrepreneurs with low digital literacy,
+                juggling inventory, sales tracking, GST compliance, and customer management &mdash; all in their head or
+                on paper. Existing software (Tally, Zoho, Vyapar) assumes literacy, a keyboard, and patience. None of
+                them do.
+            </p>
+
+            <div class="stats-block">
+                <div class="stat-item">
+                    <div class="stat-value">63M</div>
+                    <div class="stat-text">MSMEs in India &mdash; only 15% use any digital tool</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">80%</div>
+                    <div class="stat-text">Of MSME owners prefer voice over typing</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">&#8377;32L</div>
+                    <div class="stat-text">Average annual revenue lost to poor inventory tracking</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">1 in 3</div>
+                    <div class="stat-text">MSME fails in year 1 due to operational inefficiency</div>
+                </div>
+            </div>
+
+            <ol class="clean-list">
+                <li>01. Low digital literacy &mdash; most owners can't type fast or navigate complex UIs</li>
+                <li>02. Language barrier &mdash; tools are English-first; owners think in Hindi/regional</li>
+                <li>03. No time &mdash; shopkeepers can't stop selling to enter data</li>
+                <li>04. No identity &mdash; MSMEs have no digital presence of their own</li>
+            </ol>
+        </section>
+
+        <section class="section reveal" id="solution">
+            <header class="section-header">
+                <h2>The Solution</h2>
+                <span class="h-line"></span>
+                <span class="mono-label">02 / 2026</span>
+            </header>
+
+            <p class="section-copy">
+                VyapGO is a voice-first business OS for MSMEs. The user doesn't need to learn software. They just
+                talk. The system does the rest &mdash; inventory, invoicing, compliance, analytics &mdash; all triggered
+                through natural language in their preferred language.
+            </p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Product</th>
+                            <th>What It Does</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="index-num">01</td>
+                            <td>VyapYantra</td>
+                            <td>Builds the shopkeeper a mobile app &mdash; through voice, live</td>
+                        </tr>
+                        <tr>
+                            <td class="index-num">02</td>
+                            <td>VyapSathi</td>
+                            <td>Alexa-like AI hardware device for hands-free shop management</td>
+                        </tr>
+                        <tr>
+                            <td class="index-num">03</td>
+                            <td>VyapMandi</td>
+                            <td>Quality-assured marketplace &mdash; top products from each shop listed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section reveal" id="breakdown">
+            <header class="section-header">
+                <h2>Product Breakdown</h2>
+                <span class="h-line"></span>
+                <span class="mono-label">03 / 2026</span>
+            </header>
+
+            <article class="product-block reveal">
+                <span class="mono-label product-label">PRODUCT 01 &mdash; VyapYantra</span>
+                <h3 class="product-title">"Your shop app. Built by your voice."</h3>
+
+                <p class="subheading">How It Works</p>
+                <ol class="clean-list">
+                    <li>01. Owner speaks their shop details, products, and categories in natural language</li>
+                    <li>02. VyapYantra generates a branded mobile app &mdash; live, in real time, on screen</li>
+                    <li>03. Owner reviews and downloads the app. No code. No forms. No agency.</li>
+                </ol>
+
+                <p class="subheading">What The App Does</p>
+                <div class="feature-grid">
+                    <div class="feature-tile">
+                        <span class="mono-label feature-title">Voice Inventory Management</span>
+                        <p>"2 bottles of juice sold" &rarr; auto-deducted from stock</p>
+                    </div>
+                    <div class="feature-tile">
+                        <span class="mono-label feature-title">Daily Sales Dashboard</span>
+                        <p>Visual summary of today's sales, revenue, units moved</p>
+                    </div>
+                    <div class="feature-tile">
+                        <span class="mono-label feature-title">Weekly Reports</span>
+                        <p>Auto-generated PDF/summary every Sunday</p>
+                    </div>
+                    <div class="feature-tile">
+                        <span class="mono-label feature-title">AI Data Scientist</span>
+                        <p>Analyses shop data + compares with online market data &rarr; gives recommendations (reduce
+                            price on X, sell Y in evenings, stock Z more)</p>
+                    </div>
+                    <div class="feature-tile">
+                        <span class="mono-label feature-title">GST Invoicing</span>
+                        <p>Voice-triggered invoice generation, compliance-ready</p>
+                    </div>
+                    <div class="feature-tile">
+                        <span class="mono-label feature-title">Shop Identity</span>
+                        <p>Every MSME gets a shareable digital storefront link</p>
+                    </div>
+                </div>
+
+                <p class="key-outcome">"60% reduction in data entry time. Owners spend more time selling, less time recording."</p>
+            </article>
+
+            <article class="product-block reveal">
+                <span class="mono-label product-label">PRODUCT 02 &mdash; VyapSathi</span>
+                <h3 class="product-title">"For shops where you can't hold a phone."</h3>
+
+                <p class="section-copy">
+                    Kirana stores, vegetable vendors, dhaba owners &mdash; they're constantly using their hands. A
+                    phone-first product doesn't fit. VyapSathi is a physical AI device (think Amazon Echo) placed at
+                    the counter. The shopkeeper simply speaks &mdash; "Raju ne ek kg atta liya" &mdash; and it updates
+                    the app automatically.
+                </p>
+
+                <ol class="clean-list">
+                    <li>01. Hands-free voice logging &mdash; syncs directly to VyapYantra app</li>
+                    <li>02. Supports Hindi + regional languages</li>
+                    <li>03. Works offline, syncs when connected</li>
+                    <li>04. No screen required &mdash; audio confirmation of each action</li>
+                </ol>
+
+                <p class="target-user"><span class="mono-label">Target user:</span>Shops with high footfall where phones are impractical</p>
+            </article>
+
+            <article class="product-block reveal">
+                <span class="mono-label product-label">PRODUCT 03 &mdash; VyapMandi</span>
+                <h3 class="product-title">"A marketplace built on trust, not ads."</h3>
+
+                <p class="section-copy">
+                    VyapMandi is VyapGO's quality-assured marketplace. Unlike Amazon or Meesho where any seller can
+                    list anything, VyapMandi lists only the top-performing product from each shop &mdash; verified by
+                    actual sales data inside VyapYantra. No paid placements. No fake reviews.
+                </p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>VyapMandi</th>
+                                <th>Meesho / Amazon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Who can list</td>
+                                <td>Any VyapGO MSME</td>
+                                <td>Anyone</td>
+                            </tr>
+                            <tr>
+                                <td>What gets listed</td>
+                                <td>Top product by sales</td>
+                                <td>All products (paid first)</td>
+                            </tr>
+                            <tr>
+                                <td>Quality signal</td>
+                                <td>Internal sales data</td>
+                                <td>Ratings (gameable)</td>
+                            </tr>
+                            <tr>
+                                <td>Discovery</td>
+                                <td>Organic, data-driven</td>
+                                <td>Ad spend driven</td>
+                            </tr>
+                            <tr>
+                                <td>Target buyer</td>
+                                <td>Local, verified MSMEs</td>
+                                <td>Mass market</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <section class="section reveal" id="role">
+            <header class="section-header">
+                <h2>My Role</h2>
+                <span class="h-line"></span>
+                <span class="mono-label">04 / 2026</span>
+            </header>
+
+            <div class="timeline">
+                <article class="timeline-block reveal">
+                    <h3>DISCOVERY</h3>
+                    <ul class="timeline-list">
+                        <li>- Conducted 80+ user interviews with MSME owners across Tier 2&ndash;3 cities</li>
+                        <li>- Mapped pain points: GST confusion, inventory loss, no digital presence</li>
+                        <li>- Identified voice as the primary modality (not touch or keyboard)</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-block reveal">
+                    <h3>PRODUCT DEFINITION</h3>
+                    <ul class="timeline-list">
+                        <li>- Wrote PRDs for VyapYantra, VyapSathi, and VyapMandi</li>
+                        <li>- Defined core user flows: voice &rarr; app generation &rarr; download &rarr; daily use</li>
+                        <li>- Prioritized features using RICE scoring (Reach &times; Impact / Effort)</li>
+                        <li>- Worked with engineers on API design for voice-to-action pipeline</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-block reveal">
+                    <h3>EXECUTION</h3>
+                    <ul class="timeline-list">
+                        <li>- Shipped Voice-to-Invoice feature &rarr; 60% faster billing</li>
+                        <li>- Reduced support tickets by 42% via self-serve AI dashboard</li>
+                        <li>- Designed VyapMandi listing logic based on internal sales-rank data</li>
+                        <li>- Managed cross-functional sprints across 3 product workstreams</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section reveal" id="outcomes">
+            <header class="section-header">
+                <h2>Outcomes</h2>
+                <span class="h-line"></span>
+                <span class="mono-label">05 / 2026</span>
+            </header>
+
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-value">60%</div>
+                    <div class="metric-label">Faster billing</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">42%</div>
+                    <div class="metric-label">Fewer support tickets</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">80+</div>
+                    <div class="metric-label">User interviews</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Products shipped</div>
+                </div>
+            </div>
+
+            <p class="section-copy">
+                VyapGO is not a dashboard product. It's a behavioural shift &mdash; taking a shopkeeper who has never
+                used software and turning them into someone who runs their business with data. The benchmark for
+                success isn't DAU. It's whether the shop owner trusts the app enough to stop writing in their
+                notebook.
+            </p>
+        </section>
+
+        <section class="section reveal" id="learnings">
+            <header class="section-header">
+                <h2>Key Learnings</h2>
+                <span class="h-line"></span>
+                <span class="mono-label">06 / 2026</span>
+            </header>
+
+            <div class="learning-list">
+                <article class="learning-item">
+                    <div class="mono-label">001</div>
+                    <div>
+                        <h3><strong>Voice UX is harder than screen UX</strong></h3>
+                        <p>Ambiguity in speech requires intent inference, not just transcription.</p>
+                    </div>
+                </article>
+
+                <article class="learning-item">
+                    <div class="mono-label">002</div>
+                    <div>
+                        <h3><strong>Trust before features</strong></h3>
+                        <p>MSME owners adopt tools that feel like they were made for them. Generic SaaS triggers rejection. Vernacular onboarding changed everything.</p>
+                    </div>
+                </article>
+
+                <article class="learning-item">
+                    <div class="mono-label">003</div>
+                    <div>
+                        <h3><strong>The device is the product</strong></h3>
+                        <p>VyapSathi shifted the product category from app to infrastructure. That changes the sales motion, pricing, and partnership strategy entirely.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer class="page-footer reveal">
+            <a class="footer-back" href="index.html">&larr; Back to Portfolio</a>
+            <p class="mono-label">&copy; 2026 Samradh Agarwal // VyapGO Case Study</p>
+        </footer>
+    </main>
+
+    <script>
+        (function () {
+            var progressBar = document.getElementById("scroll-progress");
+            var revealItems = document.querySelectorAll(".reveal");
+            var htmlEl = document.documentElement;
+            var themeToggle = document.getElementById("theme-toggle");
+            var themeStatus = document.getElementById("theme-status");
+
+            function applyTheme(theme) {
+                var nextTheme = theme === "dark" ? "dark" : "light";
+                htmlEl.setAttribute("data-theme", nextTheme);
+                if (themeStatus) {
+                    themeStatus.textContent = nextTheme === "dark" ? "Dark" : "Light";
+                }
+            }
+
+            var savedTheme = "light";
+            try {
+                savedTheme = localStorage.getItem("theme") || "light";
+            } catch (error) {
+                savedTheme = "light";
+            }
+
+            applyTheme(savedTheme);
+
+            if (themeToggle) {
+                themeToggle.addEventListener("click", function () {
+                    var current = htmlEl.getAttribute("data-theme") === "dark" ? "dark" : "light";
+                    var next = current === "dark" ? "light" : "dark";
+                    applyTheme(next);
+                    try {
+                        localStorage.setItem("theme", next);
+                    } catch (error) {
+                        // Ignore storage access issues.
+                    }
+                });
+            }
+
+            function updateProgress() {
+                var scrollTop = window.scrollY || document.documentElement.scrollTop;
+                var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                var progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+                progressBar.style.width = Math.min(Math.max(progress, 0), 100) + "%";
+            }
+
+            var observer = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            });
+
+            revealItems.forEach(function (item) {
+                observer.observe(item);
+            });
+
+            updateProgress();
+            window.addEventListener("scroll", updateProgress, { passive: true });
+            window.addEventListener("resize", updateProgress);
+        })();
+    </script>
+</body>
+
+</html>
