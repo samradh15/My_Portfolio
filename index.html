@@ -35,6 +35,9 @@
         <!-- col 1-3: Sticky Identity -->
         <aside class="identity-sidebar">
             <div class="brand">Samradh.</div>
+            <button class="theme-btn-compact mobile-theme-btn" data-theme-toggle aria-label="Toggle theme">
+                <span data-theme-status>Light</span>
+            </button>
             <div class="role-meta">
                 <p>AI Product Manager</p>
                 <p class="status-indicator"><span class="dot"></span>Available for Roles</p>
@@ -62,8 +65,8 @@
                     <span class="status-value">BUILDING</span>
                 </div>
 
-                <button id="theme-toggle" class="theme-btn-compact">
-                    <span id="theme-status">L/D</span>
+                <button id="theme-toggle" class="theme-btn-compact" data-theme-toggle aria-label="Toggle theme">
+                    <span id="theme-status" data-theme-status>Light</span>
                 </button>
             </div>
         </aside>
@@ -176,43 +179,84 @@
                     <span class="year">// 02</span>
                 </header>
 
-                <a href="vyapgo-case-study.html" class="case-study-feature reveal-on-scroll"
-                    aria-label="Open VyapGO case study">
-                    <div class="case-study-head">
-                        <span class="mono-label case-study-tag">Featured Case Study</span>
-                        <span class="mono-label">Status: Live</span>
-                    </div>
-
-                    <h3 class="case-study-title serif-display">VyapGO</h3>
-                    <p class="case-study-subtitle">Business &amp; Compliance Copilot for India's 63 Million MSMEs</p>
-
-                    <div class="case-study-meta-grid">
-                        <div class="case-study-meta-item">
-                            <span class="mono-label">Role</span>
-                            <span class="case-study-meta-value">Founding Product Manager</span>
+                <div class="case-study-stack">
+                    <a href="vyapgo-case-study.html" class="case-study-feature reveal-on-scroll"
+                        aria-label="Open VyapGO case study">
+                        <div class="case-study-head">
+                            <span class="mono-label case-study-tag">Featured Case Study</span>
+                            <span class="mono-label">Status: Live</span>
                         </div>
-                        <div class="case-study-meta-item">
-                            <span class="mono-label">Timeline</span>
-                            <span class="case-study-meta-value">May 2025 &mdash; Jan 2026</span>
-                        </div>
-                        <div class="case-study-meta-item">
-                            <span class="mono-label">Domain</span>
-                            <span class="case-study-meta-value">AI / Vernacular / MSME</span>
-                        </div>
-                        <div class="case-study-meta-item">
-                            <span class="mono-label">Impact</span>
-                            <span class="case-study-meta-value">60% Faster Billing</span>
-                        </div>
-                    </div>
 
-                    <ul class="case-study-highlights">
-                        <li>80+ MSME interviews across Tier 2&ndash;3 cities</li>
-                        <li>3 products shipped: VyapYantra, VyapSathi, VyapMandi</li>
-                        <li>42% support ticket reduction via self-serve AI dashboard</li>
-                    </ul>
+                        <h3 class="case-study-title serif-display">VyapGO</h3>
+                        <p class="case-study-subtitle">Business &amp; Compliance Copilot for India's 63 Million MSMEs</p>
 
-                    <span class="mono-label case-study-cta">Open Full Case Study &rarr;</span>
-                </a>
+                        <div class="case-study-meta-grid">
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Role</span>
+                                <span class="case-study-meta-value">Founding Product Manager</span>
+                            </div>
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Timeline</span>
+                                <span class="case-study-meta-value">May 2025 &mdash; Jan 2026</span>
+                            </div>
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Domain</span>
+                                <span class="case-study-meta-value">AI / Vernacular / MSME</span>
+                            </div>
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Impact</span>
+                                <span class="case-study-meta-value">60% Faster Billing</span>
+                            </div>
+                        </div>
+
+                        <ul class="case-study-highlights">
+                            <li>80+ MSME interviews across Tier 2&ndash;3 cities</li>
+                            <li>3 products shipped: VyapYantra, VyapSathi, VyapMandi</li>
+                            <li>42% support ticket reduction via self-serve AI dashboard</li>
+                        </ul>
+
+                        <span class="mono-label case-study-cta">Open Full Case Study &rarr;</span>
+                    </a>
+
+                    <a href="copilot-case-study.html" class="case-study-feature reveal-on-scroll"
+                        aria-label="Open Microsoft 365 Copilot case study">
+                        <div class="case-study-head">
+                            <span class="mono-label case-study-tag">New Case Study</span>
+                            <span class="mono-label">Status: Internal Review</span>
+                        </div>
+
+                        <h3 class="case-study-title serif-display">Microsoft 365 Copilot</h3>
+                        <p class="case-study-subtitle">The Activation Gap: why enterprise AI seat sales did not become
+                            daily habits</p>
+
+                        <div class="case-study-meta-grid">
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Role</span>
+                                <span class="case-study-meta-value">Principal PM (Case Analysis)</span>
+                            </div>
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Timeline</span>
+                                <span class="case-study-meta-value">Apr 2026</span>
+                            </div>
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Domain</span>
+                                <span class="case-study-meta-value">Enterprise AI / Adoption</span>
+                            </div>
+                            <div class="case-study-meta-item">
+                                <span class="mono-label">Impact</span>
+                                <span class="case-study-meta-value">Activation Strategy</span>
+                            </div>
+                        </div>
+
+                        <ul class="case-study-highlights">
+                            <li>Diagnosed funnel drop from 450M seats to habitual power users</li>
+                            <li>Mapped 3 root causes behind adoption friction in enterprise rollout</li>
+                            <li>Defined 5 product bets and behavior-first success metrics</li>
+                        </ul>
+
+                        <span class="mono-label case-study-cta">Open Full Case Study &rarr;</span>
+                    </a>
+                </div>
             </section>
 
             <!-- EXPERIENCE SECTION -->

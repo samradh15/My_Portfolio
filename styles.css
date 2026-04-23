@@ -207,6 +207,10 @@ body {
     color: var(--text-ink);
 }
 
+.mobile-theme-btn {
+    display: none;
+}
+
 /* TYPOGRAPHY SYSTEM */
 h1,
 h2,
@@ -548,6 +552,11 @@ h4 {
     color: var(--text-ink);
     text-decoration: none;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-stack {
+    display: grid;
+    gap: 1.5rem;
 }
 
 .case-study-feature:hover {
@@ -991,17 +1000,24 @@ footer {
         height: auto;
         position: relative;
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         border-right: none;
         border-bottom: 1px solid var(--line-hairline);
         padding: 1.5rem;
-        gap: 1rem;
+        gap: 0.5rem 1rem;
     }
 
     .role-meta {
-        margin-left: auto;
-        text-align: right;
+        order: 2;
+        margin-left: 0;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0;
     }
 
     .role-meta p {
@@ -1009,7 +1025,7 @@ footer {
     }
 
     .status-indicator {
-        justify-content: flex-end;
+        justify-content: flex-start;
         margin-top: 0.4rem;
         font-size: 0.8rem;
     }
@@ -1018,6 +1034,19 @@ footer {
     .system-status-widget {
         display: none;
         /* Simplify for mobile header */
+    }
+
+    .mobile-theme-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        min-width: 68px;
+        padding: 0.35rem 0.65rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 3;
     }
 
     .identity-sidebar .editorial-nav.nav-wheel {
@@ -1046,19 +1075,43 @@ footer {
     }
 
     .ticker-divider {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 0.5rem;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
     }
 
     .ticker-line {
-        order: 4;
-        width: 100%;
+        display: none;
     }
 
     .stat-group {
-        gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0.25rem;
+        min-height: 52px;
+        padding: 0.45rem 0.55rem;
+        border: 1px solid var(--line-hairline);
+        border-radius: 10px;
+        background: var(--bg-surface);
+    }
+
+    .ticker-divider>span:first-child {
+        grid-column: 1 / -1;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+    }
+
+    .ticker-divider .mono-label {
+        font-size: 0.62rem;
+    }
+
+    .ticker-divider .mono-val {
+        font-size: 0.8rem;
+        line-height: 1.2;
     }
 
     .block-header {
@@ -1082,6 +1135,15 @@ footer {
         grid-template-columns: 1fr;
         gap: 0.5rem;
         padding: 1.5rem 0;
+        opacity: 1;
+    }
+
+    .log-row:hover {
+        transform: none;
+    }
+
+    .ship-log-table:hover .log-row:not(:hover) {
+        opacity: 1;
     }
 
     .col-role {
@@ -1263,6 +1325,10 @@ footer {
         padding: 1.5rem;
     }
 
+    .case-study-stack {
+        gap: 1rem;
+    }
+
     .case-study-head {
         flex-direction: column;
         align-items: flex-start;
@@ -1291,13 +1357,21 @@ footer {
     .identity-sidebar {
         align-items: flex-start;
         flex-wrap: wrap;
-        row-gap: 0.5rem;
+        row-gap: 0.35rem;
     }
 
     .role-meta {
         margin-left: 0;
         width: 100%;
         text-align: left;
+        align-items: flex-start;
+        max-width: none;
+        padding-right: 0;
+    }
+
+    .mobile-theme-btn {
+        top: 0.75rem;
+        right: 0.75rem;
     }
 
     .status-indicator {
@@ -1315,8 +1389,19 @@ footer {
     }
 
     .ticker-divider {
-        padding-top: 0.85rem;
-        padding-bottom: 0.85rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.45rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .ticker-divider>span:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .stat-group {
+        min-height: 48px;
+        padding: 0.4rem 0.5rem;
     }
 
     .case-study-head {

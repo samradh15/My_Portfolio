@@ -491,6 +491,51 @@
                     "value": "Builders"
                 }
             ]
+        },
+        {
+            "id": "copilot-activation-gap",
+            "slug": "m365-copilot-activation-gap",
+            "title": {
+                "short": "M365 Copilot",
+                "medium": "M365 Copilot: Activation Gap",
+                "long": "M365 Copilot: Why Seat Sales Did Not Become Habit"
+            },
+            "client": "Product Strategy Analysis",
+            "timeline": "April 2026",
+            "intro": {
+                "short": "Case study on enterprise Copilot activation.",
+                "medium": "Analyzing the adoption gap between licensed seats and daily user behavior.",
+                "long": "This case study examines why Microsoft 365 Copilot's distribution advantage did not automatically convert to repeated usage, and proposes product activation mechanics to close the gap."
+            },
+            "sections": [
+                {
+                    "heading": "Activation Funnel Breakdown",
+                    "content": "The core drop happened between license provisioning and repeated daily use, revealing activation and habit-design weaknesses rather than model capability issues."
+                },
+                {
+                    "heading": "Root Cause Analysis",
+                    "content": "Three structural blockers stood out: weak moment-of-need interception, delayed first-value realization, and top-down licensing before bottom-up trust."
+                },
+                {
+                    "heading": "Product Recommendations",
+                    "content": "The strategy centers on contextual nudges, role-scoped onboarding journeys, manager reinforcement loops, and behavior-first metrics for long-term adoption."
+                }
+            ],
+            "visualSuggestions": [
+                "Activation funnel chart",
+                "Assumptions versus reality table",
+                "Behavior-based KPI dashboard"
+            ],
+            "stats": [
+                {
+                    "label": "DAU at 90 Days",
+                    "value": "34%"
+                },
+                {
+                    "label": "Pilot to Scale",
+                    "value": "5%"
+                }
+            ]
         }
     ],
     "skills": {

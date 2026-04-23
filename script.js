@@ -37,22 +37,45 @@ function initScrollAnimations() {
  * 0. Theme Toggle
  */
 function initThemeToggle() {
-    const btn = document.getElementById('theme-toggle');
-    const status = document.getElementById('theme-status');
+    const buttons = document.querySelectorAll('[data-theme-toggle]');
+    const statuses = document.querySelectorAll('[data-theme-status]');
     const html = document.documentElement;
 
-    // Check saved
-    const saved = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', saved);
-    status.textContent = saved === 'dark' ? 'Dark' : 'Light';
+    if (!buttons.length) return;
 
-    btn.addEventListener('click', () => {
-        const current = html.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
+    const getStoredTheme = () => {
+        try {
+            return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+        } catch (error) {
+            return 'light';
+        }
+    };
 
+    const storeTheme = (theme) => {
+        try {
+            localStorage.setItem('theme', theme);
+        } catch (error) {
+            // Ignore storage write failures.
+        }
+    };
+
+    const applyTheme = (theme) => {
+        const next = theme === 'dark' ? 'dark' : 'light';
         html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        status.textContent = next === 'dark' ? 'Dark' : 'Light';
+        statuses.forEach((status) => {
+            status.textContent = next === 'dark' ? 'Dark' : 'Light';
+        });
+    };
+
+    applyTheme(getStoredTheme());
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            storeTheme(next);
+        });
     });
 }
 
