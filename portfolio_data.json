@@ -5,7 +5,7 @@
             "displayName": "samradh",
             "location": "Vijayawada, India",
             "roleLabels": [
-                "AI Product Manager",
+                "AI Engineer",
                 "Product Engineer"
             ],
             "socials": [
@@ -42,9 +42,9 @@
         "recommendedLayout": "centered_split_typographic_heavy",
         "tailwindClasses": "min-h-screen flex flex-col justify-center items-start px-6 lg:px-24 bg-grid-pattern relative overflow-hidden",
         "headline": {
-            "short": "AI Product Manager.",
-            "medium": "AI Product Manager — shipping AI products.",
-            "long": "AI Product Manager candidate — I bridge the gap between AI research and real-world business value."
+            "short": "AI Engineer.",
+            "medium": "AI Engineer — shipping AI products.",
+            "long": "AI Engineer candidate — I bridge the gap between AI research and real-world business value."
         },
         "subheadline": {
             "short": "Building for users, not just models.",
@@ -86,7 +86,7 @@
         "tailwindClasses": "py-20 px-6 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-300",
         "lead": {
             "short": "I ship AI products.",
-            "medium": "I'm a Product Manager who speaks 'AI Engineer'.",
+            "medium": "I'm an AI Engineer who speaks product.",
             "long": "I don't just manage backlogs; I build systems. I understand the difference between a demo and a product, and I know how to take AI from 'cool tech' to 'business value'."
         },
         "supportingBullets": [
@@ -116,9 +116,9 @@
             }
         ],
         "bio": {
-            "short": "Founder & AI PM. Built VyapGO & DasetAI.",
+            "short": "Founder & AI Engineer. Built VyapGO & DasetAI.",
             "medium": "Founder & AI Engineer. I built and shipped VyapGO (Business Ops) and DasetAI (Data Platform).",
-            "long": "I am Samradh. I'm an engineer by training but a product builder by heart. I founded VyapGO and DasetAI, handling everything from user interviews to rewriting the inference pipelines. I want to work as an AI PM because I love the chaos of defining what to build, and the discipline of shipping it."
+            "long": "I am Samradh. I'm an engineer by training but a product builder by heart. I founded VyapGO and DasetAI, handling everything from user interviews to rewriting the inference pipelines. I want to work as an AI Engineer or Forward Deployed Engineer — roles where I can own the full loop from understanding a hard problem to shipping the system that solves it."
         },
         "mission": {
             "short": "Make AI useful.",
@@ -667,7 +667,7 @@
         "email": "samradh1515@gmail.com",
         "phone": "+91 98765 43210",
         "microcopy": {
-            "subjectLine": "Job Inquiry: AI PM — [Your Name]",
+            "subjectLine": "Job Inquiry: AI Engineer — [Your Name]",
             "messagePlaceholder": "Hey Samradh, we're looking for someone to lead our AI product...",
             "privacyNote": "I reply to every relevant message."
         },
@@ -730,22 +730,22 @@
         }
     },
     "seo": {
-        "title": "Samradh Agarwal | AI Product Manager Strategy",
-        "h1": "AI Product Manager — Shipping Real Value",
+        "title": "Samradh Agarwal | AI Engineer",
+        "h1": "AI Engineer — Shipping Real Value",
         "metaDescription": {
-            "short": "Samradh Agarwal — AI Product Manager. I bridge the gap between AI tech and user value.",
-            "medium": "Portfolio of Samradh Agarwal, an AI Product Manager and builder. VyapGO and DasetAI.",
-            "long": "Samradh Agarwal is an AI Product Manager who builds products like VyapGO and DasetAI. He combines technical engineering skills with product strategy to ship AI that works."
+            "short": "Samradh Agarwal — AI Engineer. I bridge the gap between AI tech and user value.",
+            "medium": "Portfolio of Samradh Agarwal, an AI Engineer and builder. VyapGO and DasetAI.",
+            "long": "Samradh Agarwal is an AI Engineer who builds products like VyapGO and DasetAI. He combines technical engineering skills with product strategy to ship AI that works."
         },
         "keywords": [
-            "AI Product Manager",
-            "AI PM",
+            "AI Engineer",
+            "AI Engineer",
             "Product Management",
             "VyapGO",
             "DasetAI"
         ],
         "canonical": "https://samradh.com",
-        "ogImagePrompt": "Clean typography 'Samradh: AI PM' on dark background",
+        "ogImagePrompt": "Clean typography 'Samradh: AI Engineer' on dark background",
         "twitterCardCopy": "I build AI products that matter."
     },
     "imagePrompts": {
